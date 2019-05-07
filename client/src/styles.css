@@ -1,0 +1,12 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.center {
+  margin: auto;
+  max-width: 520px;
+  max-height: 520px;
+  padding: 10px;
+}
+
+body {
+  padding: 25px;
+}

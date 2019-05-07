@@ -1,0 +1,9 @@
+Flask==1.0.2
+Flask-Cors==3.0.7
+Flask-Uploads==0.2.1
+Flask-WTF==0.14.2
+Pillow==5.3.0
+uWSGI==2.0.17.1
+numpy==1.15.4
+pymongo==3.7.2
+mongoengine==0.16.3

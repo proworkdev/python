@@ -1,0 +1,44 @@
+<div class="menu">
+  <button mat-raised-button class="menu-item btn btn-violet" (click)="fileInput.click()">Upload image</button>
+  <button mat-raised-button class="menu-item btn btn-violet" *ngIf="dataService.preview.options">Crop design</button>
+  <button mat-raised-button class="menu-item btn btn-red" (click)="onDelete()" *ngIf="current_file">
+    Delete
+  </button>
+  <button mat-raised-button class="menu-item btn btn-violet" *ngIf="current_file"
+          [disabled]="download_disabled" (click)="downloadFile()">Download
+  </button>
+</div>
+
+<div class="">
+  <mat-progress-bar class="progress-bar" mode="determinate" [value]="apiService.uploadedPercentage"
+                    *ngIf="!apiService.isUploaded">
+  </mat-progress-bar>
+  <mat-progress-bar class="progress-bar" mode="indeterminate" [value]="apiService.uploadedPercentage"
+                    *ngIf="apiService.isUploaded && !apiService.isProcessed">
+  </mat-progress-bar>
+</div>
+
+<div class="object">
+
+
+  <mat-form-field class="object-background kmenu-item">
+    <mat-select (selectionChange)="onTemplateChanged($event)" placeholder="Choose template" #template>
+      <mat-option *ngFor="let template of template_list" [value]="template.identifier">
+        {{template.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="object__color-picker menu-item" *ngIf="show_colorpicker">
+    <div class="object-color__title">Item color
+    </div>
+    <div class="menu-item color-picker-wrapper">
+      <input class="color-picker" matInput [cpPosition]="'bottom'" [(colorPicker)]="color"
+             (colorPickerClose)="pickColor($event)"
+             [style.background]="color" type="text" #inputElem>
+    </div>
+
+  </div>
+  <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+
+</div>

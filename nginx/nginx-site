@@ -1,0 +1,21 @@
+server {
+    listen 80 default_server;
+
+        location / {
+            root  /usr/share/nginx/html;
+            index  index.html index.htm;
+    }
+
+}
+
+server {
+    listen 5000 default_server;
+
+    location / {
+        include uwsgi_params;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+
+        proxy_pass http://mock_backend:5000;
+    }
+}

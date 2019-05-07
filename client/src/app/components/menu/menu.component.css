@@ -1,0 +1,59 @@
+.menu {
+  margin-bottom: 25px; 
+}
+
+.progress-bar {
+  max-width: 150px;
+}
+
+.color-picker-wrapper {
+  padding: 0 3px;
+  border: 1px solid #b8c2b7;
+  max-width: 155px;
+  height: 20px;
+
+}
+
+.color-picker {
+  position: static;
+  width: 150px;
+  height: 10px;
+  border: 2px solid rgba(168,197,255,0.78);
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  border-radius: 2px;
+  box-shadow: none;
+  margin-right: 20px;
+}
+
+.btn-red {
+  background-color: #f7546f;
+  color: white;
+}
+
+.btn-violet {
+  background-color: #6576e0;
+  color: #fff;
+  font-weight: 300;
+}
+
+.object {
+  display: grid;
+  grid-template-columns: 200px 300px;
+  grid-column-gap: 25px;
+  align-items: start;
+  grid-template-rows: 20px;
+  margin: 50px 0;
+}
+
+.object-color__title {
+  font: 400 16px/24px Roboto,"Helvetica Neue",sans-serif;
+  color: rgb(115, 115, 115);
+}
+
+.object-color__bar {
+
+}

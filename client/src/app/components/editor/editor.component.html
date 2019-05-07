@@ -1,0 +1,33 @@
+<div class="edit-window">
+  <mat-card class="edit-window__modal">
+    <a mat-dialog-close href="#" (click)="onNoClick()" class="edit-window__close close"></a>
+    <div mat-dialog-content class="edit-window__crop"
+         [ngStyle]="{'width.px': editZoneWidth, 'height.px': editZoneHeight}">
+      <div class="edit-window__img-wrapper"
+           ngDraggable
+           [handle]="myImage"
+           (endOffset)="onMoveEnd($event)">
+        <img #myImage
+             [style.transform]="'scale('+ scale +')'"
+             src="{{ currentDesignURL }}" alt=""
+             class="edit-window__img">
+      </div>
+    </div>
+
+  </mat-card>
+  <div mat-dialog-actions class="edit-window__controls">
+    <input class="edit-window__range"
+           #range
+           type="range"
+           min="1"
+           max="100"
+           value="100"
+           (change)="imageScale()"/>
+    <button mat-raised-button class="edit-window__button menu-item btn btn-violet" (click)="processImage($event)">
+      Process!
+    </button>
+    <!--<button mat-raised-button class="edit-window__button menu-item btn btn-violet" (click)="testButtonClicked($event)">-->
+      <!--test-->
+    <!--</button>-->
+  </div>
+</div>

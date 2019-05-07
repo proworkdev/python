@@ -1,0 +1,11 @@
+concept
+concept_vips
+backend/static/downloads/*
+backend/static/previews/*
+backend/static/designs/*
+!old
+.history/
+backend/static/tmp
+__pycache__
+data
+*processed/
